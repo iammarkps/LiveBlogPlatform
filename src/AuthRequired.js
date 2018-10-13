@@ -3,7 +3,7 @@ import * as fiery from 'fiery'
 import { firebase } from './firebase'
 import AdminPanel from './adminPanel'
 
-export class Admin extends React.Component {
+export class AuthRequired extends React.Component {
   render() {
     return (
       <fiery.Auth>
