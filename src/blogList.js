@@ -10,7 +10,7 @@ export default class BlogList extends React.Component {
       <fiery.Data dataRef={dataRef}>
         {blogState =>
           fiery.unwrap(blogState, {
-            loading: () => <h1>Loading</h1>,
+            loading: () => <h1 style={{ textAlign: 'center' }}>Loading</h1>,
             completed: blogs =>
               Object.keys(blogs).map(key => (
                 <Card

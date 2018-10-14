@@ -1,9 +1,8 @@
 import React from 'react'
-import { Menu, Icon } from 'antd'
-import 'antd/dist/antd.css'
+import { Menu, Icon, Row, Col } from 'antd'
 import BlogList from './blogList'
-import Admin from './admin'
 import { withRouter, Route, Switch } from 'react-router-dom'
+import AdminPanel from './admin'
 
 class App extends React.Component {
   state = {
@@ -36,10 +35,14 @@ class App extends React.Component {
             Admin
           </Menu.Item>
         </Menu>
-        <Switch>
-          <Route exact path="/" component={BlogList} />
-          <Route path="/admin" component={Admin} />
-        </Switch>
+        <Row>
+          <Col span={12} offset={6}>
+            <Switch>
+              <Route exact path="/" component={BlogList} />
+              <Route path="/admin" component={AdminPanel} />
+            </Switch>
+          </Col>
+        </Row>
       </div>
     )
   }
